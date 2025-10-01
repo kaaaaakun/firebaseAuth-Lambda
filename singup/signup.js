@@ -21,3 +21,13 @@ createUserWithEmailAndPassword(auth, "test@example.com", "password123")
   })
   .catch((err) => console.error(err));
 
+// --- login -- //
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+signInWithEmailAndPassword(auth, "test@example.com", "password123")
+  .then((userCredential) => {
+    console.log("ログイン成功:", userCredential.user.uid);
+  })
+  .catch((err) => console.error(err));
+
